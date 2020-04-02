@@ -14,7 +14,7 @@ public class MainActivity extends Activity
 		setContentView(R.layout.main);
 		
 		WebView myWebView = (WebView) findViewById(R.id.webview);
-		myWebView.loadUrl("https://mitchbux.github.io");
+		myWebView.loadUrl("https://mitchbux.github.io/");
 		
 		
     }
