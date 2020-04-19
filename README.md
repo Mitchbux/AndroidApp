@@ -8,8 +8,8 @@ Run Gradle to huile and sign APK.
 # Installation
 Download and install Android SDK Toolchain
 Compile js.js with quickjs : http://bellard.org/quickjs
-Use flag 
-`-o Whole`
+Use 
+```qjsc js.js -o Whole```
 
 
 Run test example : 
