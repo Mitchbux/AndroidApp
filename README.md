@@ -6,13 +6,10 @@ Write your JavaScript Application and Watch your Android Project being generated
 Run Gradle to huile and sign APK.
 
 # Installation
-Download and install Android SDK Toolchain
-Compile js.js with quickjs : http://bellard.org/quickjs
-Use 
-```qjsc js.js -o Whole```
+Extract provided Android SDK Toolchain whole.apk.zip
 
 
 Run test example : 
 
- `Whole -apk one.js`
+ `Whole.apk one.js`
 
