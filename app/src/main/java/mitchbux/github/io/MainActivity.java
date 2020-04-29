@@ -13,8 +13,38 @@ public class MainActivity extends Activity
         
 		setContentView(R.layout.main);
 		
-		WebView myWebView = (WebView) findViewById(R.id.webview);
-		//myWebView.loadUrl("https://screenshot-kit-r50xkn0t9.now.sh/screenshot?url=http://mitchbux.github.io&width=372&height=904");
+		WebView webView = (WebView) findViewById(R.id.webview);
+		webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
+
+        webView.getSettings().setSupportZoom(true);
+        webView.getSettings().setBuiltInZoomControls(true);
+        webView.getSettings().setDisplayZoomControls(false);
+
+        webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+        setDesktopMode(webView, true);
+		webView.loadUrl("https://mitchbux.github.io/");
 		
-		myWebView.loadUrl("https://mitchbux.github.io/screenshot.html");}
+		//https://screenshot-kit-r50xkn0t9.now.sh/screenshot?url=http://mitchbux.github.io&width=380&height=904");
+	}
+	public void setDesktopMode(WebView webView,boolean enabled) {
+		String newUserAgent = webView.getSettings().getUserAgentString();
+		if (enabled) {
+			try {
+				String ua = webView.getSettings().getUserAgentString();
+				String androidOSString = webView.getSettings().getUserAgentString().substring(ua.indexOf("("), ua.indexOf(")") + 1);
+				newUserAgent = webView.getSettings().getUserAgentString().replace(androidOSString, "(X11; Linux x86_64)");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else {
+			newUserAgent = null;
+		}
+
+		webView.getSettings().setUserAgentString(newUserAgent);
+		webView.getSettings().setUseWideViewPort(enabled);
+		webView.getSettings().setLoadWithOverviewMode(enabled);
+		webView.reload();
+	}
 }
