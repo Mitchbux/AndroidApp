@@ -85,21 +85,11 @@ js.module("str",
   "this._str.indexer =function(name, code){this[name]=code;};"
 );
 
+js.module("js","this._js.indexer =function(name, code){js.JSON('{'+code+'}',this[name]={});};");
+
 js.module("html",
 "this._html.indexer = function(name, code){this[name]=code;};this._html.getter = function(){return `<!DOCTYPE html><style>${(this['css'] ? this.css : '')}</style><body><canvas/>${(this['body'] ? this.body : '') }</body><script>${( this['script'] ? this.script : '')}</script>\n`;};"
 );
-
-//todo : htmlscreenshot module : from video, html etc... 
-//todo : using local http server
-//webgl first attempt to render fragment shader
-//Object.defineProperty(Array.prototype,"webgl",  {
-//get: function(){if (!this._strings)this._strings=[];
-//this._strings.indexer = function(name, code){this[name]=code;};
-//this._strings.getter = function(){return loadFile("webgl.hed.js").replace("{fragment}", this.fragment).replace("{vertex}", this.vertex) +
-//  loadFile("webgl.run.js");}; return this._strings;},
-//set: function(stack){if (!this._strings)return; this._strings.body+=stack;}});
-
-//var scriptArgs = process.argv.slice(1);
 
 js.WON(loadFile(scriptArgs[1]));
 console.log(js.toString());
