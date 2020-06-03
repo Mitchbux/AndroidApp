@@ -1,0 +1,10 @@
+# Unzip whole.apk
+# then
+
+set JAVAHOME=C:\FOLDER...WHOLE.APK
+
+# and replace FOILDER... to the folder where it is Unzipped
+
+# finally run to see your apk build
+
+gradlew build
