@@ -1,15 +1,19 @@
 # AndroidApp
-Mitchbux android application :: github pages hosted application
+Mitchbux android application :: repl.it hosted web application
 
 # Automatic Generator
 Write your JavaScript Application and Watch your Android Project being generated instantly.
 Run Whole.apk.exe to build and sign APK.
 
 # Installation
-Extract provided Android SDK Toolchain whole.apk.zip
+Extract Android SDK Toolchain (todo : provide command-line tools)
 
+Clone github repository
 
-Run test example : 
+Use Android Studio to build APK.
 
- `Whole.apk one.js`
+# Démo on tour phone
+Use Mitchbux.apk on the main folder of this repository.
+ Allow untrusted source and install on your phone.
+
 
