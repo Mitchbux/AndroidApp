@@ -24,10 +24,9 @@ public class MainActivity extends Activity
 
         webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
         setDesktopMode(webView, true);
-		webView.loadUrl("https://mitchbux.github.io/");
+		webView.loadUrl("https://dyper.danycase.repl.it/reload.html");
 		
-		//https://screenshot-kit-r50xkn0t9.now.sh/screenshot?url=http://mitchbux.github.io&width=380&height=904");
-	}
+		
 	public void setDesktopMode(WebView webView,boolean enabled) {
 		String newUserAgent = webView.getSettings().getUserAgentString();
 		if (enabled) {
